@@ -1,0 +1,200 @@
+Last login: Tue Oct 16 09:01:40 on ttys000
+➜  02-Experiment-methods git:(master) ✗ irb
+[1] pry(main)> nil
+=> nil
+[2] pry(main)> nil.nil?
+=> true
+[3] pry(main)> a = [1,2,5,8,4,6,8,9]
+=> [1, 2, 5, 8, 4, 6, 8, 9]
+[4] pry(main)> a.sort
+=> [1, 2, 4, 5, 6, 8, 8, 9]
+[5] pry(main)> Date(1989, 11, 24)
+NoMethodError: undefined method `Date' for main:Object
+from (pry):5:in `<main>'
+[6] pry(main)> Date.new(year, month, day)
+NameError: undefined local variable or method `year' for main:Object
+from (pry):6:in `<main>'
+[7] pry(main)> Date.new (year, month, day)
+SyntaxError: unexpected ')', expecting '='
+Date.new (year, month, day)
+                           ^
+[7] pry(main)> Date.new (1989, 11, 24)
+SyntaxError: unexpected ',', expecting ')'
+Date.new (1989, 11, 24)
+               ^
+[7] pry(main)> Date.new (1989,11,24)
+SyntaxError: unexpected ',', expecting ')'
+Date.new (1989,11,24)
+               ^
+[7] pry(main)> Date.new(1989,11,24)
+=> #<Date: 1989-11-24 ((2447855j,0s,0n),+0s,2299161j)>
+[8] pry(main)> Date.methods
+=> [:new,
+ :_load,
+ :today,
+ :parse,
+ :strptime,
+ :valid_jd?,
+ :valid_ordinal?,
+ :valid_civil?,
+ :valid_date?,
+ :valid_commercial?,
+ :julian_leap?,
+ :gregorian_leap?,
+ :leap?,
+ :jd,
+ :ordinal,
+ :civil,
+ :commercial,
+ :_strptime,
+ :_parse,
+ :_iso8601,
+ :iso8601,
+ :_rfc3339,
+ :rfc3339,
+ :_xmlschema,
+ :xmlschema,
+ :_rfc2822,
+ :_rfc822,
+ :rfc2822,
+ :rfc822,
+ :_httpdate,
+ :httpdate,
+ :_jisx0301,
+ :jisx0301,
+ :yaml_tag,
+ :allocate,
+ :superclass,
+ :<=>,
+ :include,
+ :<=,
+ :>=,
+ :==,
+ :===,
+ :included_modules,
+ :include?,
+ :name,
+ :ancestors,
+ :instance_methods,
+ :public_instance_methods,
+ :protected_instance_methods,
+ :private_instance_methods,
+ :constants,
+ :const_get,
+ :const_set,
+ :const_defined?,
+ :class_variables,
+ :remove_class_variable,
+ :class_variable_get,
+ :class_variable_set,
+ :class_variable_defined?,
+ :public_constant,
+ :private_constant,
+ :deprecate_constant,
+ :singleton_class?,
+ :module_exec,
+ :class_exec,
+ :freeze,
+ :inspect,
+ :const_missing,
+ :module_eval,
+ :prepend,
+ :method_defined?,
+ :<,
+ :>,
+ :public_method_defined?,
+ :private_method_defined?,
+ :class_eval,
+ :yaml_as,
+ :psych_yaml_as,
+ :pretty_print,
+ :protected_method_defined?,
+ :public_class_method,
+ :private_class_method,
+ :to_s,
+ :autoload,
+ :autoload?,
+ :pretty_print_cycle,
+ :instance_method,
+ :public_instance_method,
+[9] pry(main)> 
+[10] pry(main)> Date.new
+=> #<Date: -4712-01-01 ((0j,0s,0n),+0s,2299161j)>
+[11] pry(main)> Date.new(2018,1,1)
+=> #<Date: 2018-01-01 ((2458120j,0s,0n),+0s,2299161j)>
+[12] pry(main)> today = Date.new
+=> #<Date: -4712-01-01 ((0j,0s,0n),+0s,2299161j)>
+[13] pry(main)> today = Date.now
+NoMethodError: undefined method `now' for Date:Class
+Did you mean?  new
+from (pry):12:in `<main>'
+[14] pry(main)> Date.today
+=> #<Date: 2018-10-16 ((2458408j,0s,0n),+0s,2299161j)>
+[15] pry(main)> Date.now
+NoMethodError: undefined method `now' for Date:Class
+Did you mean?  new
+from (pry):14:in `<main>'
+[16] pry(main)> Date.today
+=> #<Date: 2018-10-16 ((2458408j,0s,0n),+0s,2299161j)>
+[17] pry(main)> 'hello world'
+=> "hello world"
+[18] pry(main)> 'hello world'.length
+=> 11
+[19] pry(main)> rake
+NameError: undefined local variable or method `rake' for main:Object
+from (pry):18:in `<main>'
+[20] pry(main)> exit
+➜  02-Experiment-methods git:(master) clear
+
+➜  02-Experiment-methods git:(master) irb
+[1] pry(main)> string = "hello?"
+=> "hello?"
+[2] pry(main)> string.include?('?')
+=> true
+[3] pry(main)> !string.include?('?')
+=> false
+[4] pry(main)> 345.digits
+=> [5, 4, 3]
+[5] pry(main)> 345.digits.reverse
+=> [3, 4, 5]
+[6] pry(main)> "hello".split
+=> ["hello"]
+[7] pry(main)> "hello".split(" ")
+=> ["hello"]
+[8] pry(main)> "hello".chars
+=> ["h", "e", "l", "l", "o"]
+[9] pry(main)> 342.digits.reverse
+=> [3, 4, 2]
+[10] pry(main)> 10.between?(10, 100)
+=> true
+[11] pry(main)> 100.between?(10, 100)
+=> true
+[12] pry(main)> not_unique = %w(one one two)
+=> ["one", "one", "two"]
+[13] pry(main)> not_unique..uniq
+NameError: undefined local variable or method `uniq' for main:Object
+from (pry):13:in `<main>'
+[14] pry(main)> not_unique.uniq
+=> ["one", "two"]
+[15] pry(main)> not_unique == not_unique.uniq
+=> false
+[16] pry(main)> sprintf("%08b", 37)
+=> "00100101"
+[17] pry(main)> ip_address = "37.160.113.170"
+=> "37.160.113.170"
+[18] pry(main)> ip_address.split('.')
+=> ["37", "160", "113", "170"]
+[19] pry(main)> ip_address.split('.').to_i
+NoMethodError: undefined method `to_i' for ["37", "160", "113", "170"]:Array
+Did you mean?  to_s
+               to_a
+               to_h
+from (pry):19:in `<main>'
+[20] pry(main)> ip_arr = ip_address.split('.')
+=> ["37", "160", "113", "170"]
+[21] pry(main)> ip_arr
+=> ["37", "160", "113", "170"]
+[22] pry(main)> ip_arr.sum.with_index { |x, i| x * 256**(4 - i) }
+TypeError: String can't be coerced into Integer
+from (pry):22:in `+'
+[23] pry(main)> ip_arr.sum.with_index { |x, i| x.to_i * 256**(4 - i) }
