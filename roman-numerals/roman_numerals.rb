@@ -1,51 +1,15 @@
-def to_roman(n)
-
-	units = { 
-		"1": "I",
-		"2": "II",
-		"3": "III",
-		"4": "IV",
-		"5": "V",
-		"6": "VI",
-		"7": "VII",
-		"8": "VIII",
-		"9": "IX",
-	}
-
-	tens = {
-		"1": "X",
-		"2": "XX",
-		"3": "XXX",
-		"4": "XL",
-		"5": "L",
-		"6": "LX",
-		"7": "LXX",
-		"8": "LXXX",
-		"9": "XC"
-	}
-
-	hundreds = {
-		"1": "C",
-		"2": "CC",
-		"3": "CCC",
-		"4": "CD",
-		"5": "D",
-		"6": "DC",
-		"7": "DCC",
-		"8": "DCCC",
-		"9": "CM"
-	}
-
-	thousands = {
-		"1": "M",
-		"2": "MM",
-		"3": "MMM"
-	}
-
-	lookup = [thousands, hundreds, tens, units]
-
-	n.to_s.each_char.with_index { |x, i| }
-
+class Integer
+  def to_roman
+    number = self
+    numeral_array = %w[M CM D CD C XC L XL X IX V IV I]
+    int_array = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
+    numeral_string = ''
+    numeral_array.each_with_index do |num, index|
+      while number >= int_array[index]
+        numeral_string += num
+        number -= int_array[index]
+      end
+    end
+    numeral_string
+  end
 end
-
-p lookup
